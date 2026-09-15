@@ -1,0 +1,24 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "io.github.eternalcodertanishq3/applygenie-mcp",
+  "title": "ApplyGenie",
+  "description": "Autonomous job application copilot, ATS form filler, and AI mock interview engine using desktop vision, stealth Playwright, and local SQLite application tracking.",
+  "status": "active",
+  "repository": {
+    "url": "https://github.com/Eternalcodertanishq3/applygenie-mcp"
+  },
+  "author": {
+    "name": "Tanishq Mangal",
+    "email": "tanishkmangal3@gmail.com"
+  },
+  "license": "MIT",
+  "deployment": {
+    "type": "package",
+    "package": {
+      "type": "pypi",
+      "name": "applygenie-mcp",
+      "command": "uvx",
+      "args": ["applygenie-mcp"]
+    }
+  }
+}

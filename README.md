@@ -6,7 +6,9 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![MCP Protocol](https://img.shields.io/badge/MCP-Standard-orange.svg)](https://modelcontextprotocol.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![FastMCP](https://img.shields.io/badge/built%20with-FastMCP-green.svg)](https://github.com/jlowin/fastmcp)
+[![PyPI](https://img.shields.io/pypi/v/applygenie-mcp.svg)](https://pypi.org/project/applygenie-mcp/)
+
+<!-- mcp-name: io.github.eternalcodertanishq3/applygenie-mcp -->
 
 ---
 
