@@ -8,7 +8,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyPI](https://img.shields.io/pypi/v/applygenie-mcp.svg)](https://pypi.org/project/applygenie-mcp/)
 
-<!-- mcp-name: io.github.eternalcodertanishq3/applygenie-mcp -->
+<!-- mcp-name: io.github.Eternalcodertanishq3/applygenie-mcp -->
 
 ---
 
