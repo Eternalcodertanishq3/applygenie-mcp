@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "applygenie": {
+      "command": "python",
+      "args": ["-m", "applygenie.server"],
+      "env": {
+        "PYTHONUTF8": "1"
+      }
+    }
+  }
+}

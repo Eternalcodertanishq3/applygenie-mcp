@@ -1,0 +1,52 @@
+[project]
+name = "applygenie-mcp"
+version = "0.1.0"
+description = "ApplyGenie — Your magical AI assistant that grants your job wishes. MCP server for desktop automation, job application form filling, and mock interview preparation."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Tanishq Mangal", email = "tanishkmangal3@gmail.com" }]
+keywords = ["mcp", "job-application", "automation", "interview", "copilot", "applygenie"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business",
+]
+
+dependencies = [
+    "fastmcp>=2.0",
+    "mss>=9.0",
+    "pywinauto>=0.6.8",
+    "pygetwindow>=0.0.9",
+    "pynput>=1.7",
+    "Pillow>=10.0",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+browser = ["playwright>=1.40"]
+full = ["applygenie-mcp[browser]"]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23", "ruff>=0.4"]
+
+[project.scripts]
+applygenie-mcp = "applygenie.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/applygenie"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

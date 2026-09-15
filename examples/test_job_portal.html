@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyncly Careers — AI/ML Engineer Application</title>
+  <style>
+    * { box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: #f4f6f8; margin: 0; padding: 40px 20px; color: #1a202c; }
+    .container { max-width: 760px; margin: 0 auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); padding: 40px; }
+    .header { border-bottom: 2px solid #edf2f7; padding-bottom: 24px; margin-bottom: 30px; }
+    .header h1 { margin: 0 0 8px 0; font-size: 26px; color: #2d3748; }
+    .header p { margin: 0; color: #718096; font-size: 15px; }
+    .badge { display: inline-block; background: #ebf8ff; color: #3182ce; padding: 4px 10px; border-radius: 6px; font-size: 13px; font-weight: 600; margin-top: 8px; }
+    .section-title { font-size: 18px; font-weight: 700; color: #2d3748; margin: 30px 0 16px 0; padding-bottom: 8px; border-bottom: 1px solid #e2e8f0; }
+    .form-group { margin-bottom: 20px; }
+    .form-row { display: flex; gap: 16px; }
+    .form-row .form-group { flex: 1; }
+    label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px; color: #4a5568; }
+    label .req { color: #e53e3e; margin-left: 2px; }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="url"], select, textarea {
+      width: 100%; padding: 10px 14px; border: 1.5px solid #cbd5e0; border-radius: 8px; font-size: 15px; transition: border-color 0.2s, box-shadow 0.2s; outline: none; background: #fff;
+    }
+    input:focus, select:focus, textarea:focus { border-color: #3182ce; box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15); }
+    textarea { min-height: 110px; resize: vertical; }
+    .file-dropzone { border: 2px dashed #cbd5e0; border-radius: 8px; padding: 24px; text-align: center; background: #f7fafc; cursor: pointer; transition: background 0.2s; }
+    .file-dropzone:hover { background: #edf2f7; }
+    .file-dropzone input[type="file"] { display: block; margin: 10px auto 0 auto; }
+    .btn-submit { display: block; width: 100%; background: #3182ce; color: #fff; border: none; padding: 14px 24px; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 30px; }
+    .btn-submit:hover { background: #2b6cb0; }
+    .status-banner { display: none; margin-top: 20px; padding: 16px; border-radius: 8px; background: #c6f6d5; color: #22543d; font-weight: 600; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>AI / ML Engineer — Core Platform</h1>
+      <p>Cyncly &bull; Bangalore, India (Hybrid / Remote) &bull; Full-time</p>
+      <span class="badge">Standard ATS Form v2</span>
+    </div>
+
+    <form id="job-application-form">
+      <div class="section-title">Personal Information</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="first_name">First Name <span class="req">*</span></label>
+          <input type="text" id="first_name" name="first_name" placeholder="e.g. John" required>
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name <span class="req">*</span></label>
+          <input type="text" id="last_name" name="last_name" placeholder="e.g. Doe" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email Address <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="john@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone / Mobile <span class="req">*</span></label>
+          <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="city">Current City <span class="req">*</span></label>
+          <input type="text" id="city" name="city" placeholder="e.g. Bangalore" required>
+        </div>
+        <div class="form-group">
+          <label for="state">State / Province</label>
+          <input type="text" id="state" name="state" placeholder="e.g. Karnataka">
+        </div>
+        <div class="form-group">
+          <label for="pin_code">PIN / Postal Code</label>
+          <input type="text" id="pin_code" name="pin_code" placeholder="e.g. 560001">
+        </div>
+      </div>
+
+      <div class="section-title">Online Profiles & Portfolios</div>
+      <div class="form-group">
+        <label for="linkedin_url">LinkedIn Profile URL <span class="req">*</span></label>
+        <input type="url" id="linkedin_url" name="linkedin_url" placeholder="https://linkedin.com/in/username" required>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="github_url">GitHub Profile URL</label>
+          <input type="url" id="github_url" name="github_url" placeholder="https://github.com/username">
+        </div>
+        <div class="form-group">
+          <label for="portfolio_url">Personal Portfolio / Website</label>
+          <input type="url" id="portfolio_url" name="portfolio_url" placeholder="https://myportfolio.com">
+        </div>
+      </div>
+
+      <div class="section-title">Resume / Supporting Documents</div>
+      <div class="form-group">
+        <label for="resume">Upload Resume / CV (PDF or DOCX) <span class="req">*</span></label>
+        <div class="file-dropzone">
+          <span>Drop your resume file here or select below</span>
+          <input type="file" id="resume" name="resume" accept=".pdf,.docx" required>
+        </div>
+      </div>
+
+      <div class="section-title">Work Preferences & Availability</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="notice_period">Notice Period / Earliest Start Date <span class="req">*</span></label>
+          <input type="text" id="notice_period" name="notice_period" placeholder="e.g. Immediate, 15 days" required>
+        </div>
+        <div class="form-group">
+          <label for="willing_to_relocate">Are you willing to relocate? <span class="req">*</span></label>
+          <select id="willing_to_relocate" name="willing_to_relocate" required>
+            <option value="">Select an option</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="expected_ctc">Expected Annual Compensation / CTC <span class="req">*</span></label>
+        <input type="text" id="expected_ctc" name="expected_ctc" placeholder="e.g. ₹6,00,000 - ₹8,00,000" required>
+      </div>
+
+      <div class="section-title">Additional Questions</div>
+      <div class="form-group">
+        <label for="why_hire">Why are you the best candidate for this AI/ML Engineer role? <span class="req">*</span></label>
+        <textarea id="why_hire" name="why_hire" placeholder="Highlight your relevant engineering and model building experience..." required></textarea>
+      </div>
+
+      <button type="submit" id="submit_application" class="btn-submit">Submit Application</button>
+      <div id="status_message" class="status-banner">✅ Application successfully submitted to Cyncly talent pool!</div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('job-application-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('status_message').style.display = 'block';
+      document.getElementById('submit_application').disabled = true;
+      document.getElementById('submit_application').innerText = 'Application Submitted ✓';
+    });
+  </script>
+</body>
+</html>

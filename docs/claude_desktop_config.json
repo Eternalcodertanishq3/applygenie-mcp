@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "applygenie": {
+      "command": "uvx",
+      "args": ["applygenie-mcp"]
+    }
+  }
+}
