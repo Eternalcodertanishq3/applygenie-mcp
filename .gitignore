@@ -34,3 +34,6 @@ ENV/
 
 # Data
 data/
+
+# MCP Publisher
+mcp-publisher*
