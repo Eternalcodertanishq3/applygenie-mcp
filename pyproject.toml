@@ -1,6 +1,6 @@
 [project]
 name = "applygenie-mcp"
-version = "0.1.1"
+version = "0.1.2"
 description = "ApplyGenie — Your magical AI assistant that grants your job wishes. MCP server for desktop automation, job application form filling, and mock interview preparation."
 readme = "README.md"
 license = "MIT"

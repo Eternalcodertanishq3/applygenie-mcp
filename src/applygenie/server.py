@@ -9,11 +9,13 @@ It registers tools across all 5 operational pillars:
 5. Mock Interview Preparation (Coding hint ladders, STAR behavioral coaching, system design)
 """
 
+import base64
 import json
 import logging
 from typing import Any
 
-from fastmcp import FastMCP, Image as MCPImage
+from fastmcp import FastMCP
+from fastmcp.utilities.types import Image as MCPImage
 
 from applygenie.config import APP_NAME, APP_VERSION, ensure_data_dirs
 from applygenie.core.keyboard import press_key, type_text
@@ -90,7 +92,7 @@ def _get_browser_engine():
 mcp = FastMCP(
     name="ApplyGenie",
     version=APP_VERSION,
-    description=(
+    instructions=(
         "ApplyGenie 🧞‍♂️ — Your magical AI assistant that grants your job wishes. "
         "Desktop automation, job application form filling, application tracking, "
         "and company-specific mock interview preparation."
@@ -112,7 +114,7 @@ def screenshot(monitor: int = 0) -> MCPImage:
     """
     safety.log_action(ActionType.SCREENSHOT, {"monitor": monitor}, "capturing")
     b64, metadata = capture_screenshot(monitor)
-    return MCPImage(data=b64, format="jpeg")
+    return MCPImage(data=base64.b64decode(b64), format="jpeg")
 
 
 @mcp.tool()
