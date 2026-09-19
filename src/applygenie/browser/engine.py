@@ -65,9 +65,15 @@ class BrowserEngine:
 
     def navigate(self, url: str) -> str:
         page = self.get_page()
-        page.goto(url, wait_until="networkidle")
+        try:
+            page.goto(url, wait_until="domcontentloaded", timeout=25000)
+        except Exception as e:
+            logger.warning(f"Navigation warning: {e}")
         from applygenie.browser.stealth import inject_stealth_scripts
-        inject_stealth_scripts(page)
+        try:
+            inject_stealth_scripts(page)
+        except Exception:
+            pass
         return page.title()
 
     def close(self) -> None:

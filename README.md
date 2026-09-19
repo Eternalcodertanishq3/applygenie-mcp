@@ -7,6 +7,7 @@
 [![MCP Protocol](https://img.shields.io/badge/MCP-Standard-orange.svg)](https://modelcontextprotocol.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyPI](https://img.shields.io/pypi/v/applygenie-mcp.svg)](https://pypi.org/project/applygenie-mcp/)
+[![M8ven Score](https://m8ven.ai/badge/mcp/eternalcodertanishq3/applygenie-mcp)](https://m8ven.ai/mcp/eternalcodertanishq3/applygenie-mcp)
 
 <!-- mcp-name: io.github.Eternalcodertanishq3/applygenie-mcp -->
 
