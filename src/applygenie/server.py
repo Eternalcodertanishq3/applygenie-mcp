@@ -105,7 +105,7 @@ mcp = FastMCP(
 # ═══════════════════════════════════════════════════════════
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def screenshot(monitor: int = 0) -> MCPImage:
     """Capture a screenshot of the display.
 
@@ -117,13 +117,13 @@ def screenshot(monitor: int = 0) -> MCPImage:
     return MCPImage(data=base64.b64decode(b64), format="jpeg")
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def get_screen_size() -> dict[str, Any]:
     """Get information about all connected monitors including resolutions and bounds."""
     return get_screen_info()
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': False})
 def mouse_click(x: int, y: int, button: str = "left", clicks: int = 1) -> str:
     """Click the mouse at specified screen coordinates.
 
@@ -141,7 +141,7 @@ def mouse_click(x: int, y: int, button: str = "left", clicks: int = 1) -> str:
     return str(result)
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def mouse_move(x: int, y: int) -> str:
     """Move the mouse cursor to specific coordinates."""
     safety.check_failsafe(x, y)
@@ -151,7 +151,7 @@ def mouse_move(x: int, y: int) -> str:
     return str(result)
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': False})
 def mouse_scroll(direction: str = "down", amount: int = 3) -> str:
     """Scroll the mouse wheel up or down."""
     safety.check_rate_limit()
@@ -160,7 +160,7 @@ def mouse_scroll(direction: str = "down", amount: int = 3) -> str:
     return str(result)
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': False})
 def mouse_drag(start_x: int, start_y: int, end_x: int, end_y: int) -> str:
     """Click and drag from a start position to an end position."""
     safety.check_failsafe(start_x, start_y)
@@ -172,13 +172,13 @@ def mouse_drag(start_x: int, start_y: int, end_x: int, end_y: int) -> str:
     return str(result)
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def get_mouse_position() -> dict[str, Any]:
     """Get the current mouse cursor position coordinates."""
     return get_position()
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': False})
 def type_text_input(text: str, interval: float = 0.03) -> str:
     """Type text using simulated keyboard with randomized human-like keystroke delays."""
     safety.check_rate_limit()
@@ -188,7 +188,7 @@ def type_text_input(text: str, interval: float = 0.03) -> str:
     return str(result)
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': False})
 def press_keyboard_key(keys: str) -> str:
     """Press a key or key combination (e.g. 'enter', 'tab', 'ctrl+a', 'alt+tab')."""
     safety.check_rate_limit()
@@ -198,13 +198,13 @@ def press_keyboard_key(keys: str) -> str:
     return str(result)
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def list_open_windows() -> list[dict[str, Any]]:
     """List all currently visible desktop windows with titles and geometry."""
     return list_windows()
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def focus_app_window(title: str) -> str:
     """Bring a desktop window to the foreground by its title (fuzzy match supported)."""
     safety.enforce_delay()
@@ -213,31 +213,31 @@ def focus_app_window(title: str) -> str:
     return str(result)
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def minimize_app_window(title: str) -> str:
     """Minimize a window by title."""
     return str(minimize_window(title))
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def maximize_app_window(title: str) -> str:
     """Maximize a window by title."""
     return str(maximize_window(title))
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def get_current_window() -> dict[str, Any]:
     """Get information about the currently active focused window."""
     return get_active_window() or {"title": "Unknown", "is_active": False}
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def search_windows(pattern: str) -> list[dict[str, Any]]:
     """Search for windows matching a regex or substring pattern."""
     return find_windows(pattern)
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def wait_seconds(seconds: float = 1.0) -> str:
     """Pause execution for a specified duration (capped at 30 seconds for safety)."""
     import time
@@ -246,7 +246,7 @@ def wait_seconds(seconds: float = 1.0) -> str:
     return f"Waited {seconds} seconds."
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def get_action_history(last_n: int = 20) -> list[dict[str, Any]]:
     """Inspect recent safety audit log records performed by ApplyGenie."""
     return safety.get_action_log(min(last_n, 100))
@@ -257,7 +257,7 @@ def get_action_history(last_n: int = 20) -> list[dict[str, Any]]:
 # ═══════════════════════════════════════════════════════════
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def get_user_profile() -> dict[str, Any]:
     """Retrieve the saved candidate profile for job applications."""
     profile = load_profile()
@@ -266,13 +266,13 @@ def get_user_profile() -> dict[str, Any]:
     return profile.model_dump()
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def get_user_profile_summary() -> dict[str, Any]:
     """Get a concise summary of candidate credentials, skills count, and experiences."""
     return get_profile_summary()
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': True, 'idempotentHint': True, 'openWorldHint': False})
 def setup_user_profile(
     first_name: str,
     last_name: str,
@@ -309,14 +309,14 @@ def setup_user_profile(
     return {"status": "success", "profile": prof.model_dump()}
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def update_profile_attribute(field_name: str, value: Any) -> dict[str, Any]:
     """Update a specific top-level field in the candidate profile."""
     prof = update_profile_field(field_name, value)
     return {"status": "updated", "field": field_name, "value": value}
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': False})
 def add_work_experience(
     title: str,
     company: str,
@@ -340,7 +340,7 @@ def add_work_experience(
     return {"status": "success", "total_experiences": len(prof.experiences)}
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': False})
 def add_education_entry(
     degree: str,
     field_of_study: str,
@@ -360,7 +360,7 @@ def add_education_entry(
     return {"status": "success", "total_education": len(prof.education)}
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': False})
 def add_project_entry(
     name: str,
     description: str,
@@ -380,14 +380,14 @@ def add_project_entry(
     return {"status": "success", "total_projects": len(prof.projects)}
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def save_portal_custom_answer(question_pattern: str, answer_text: str) -> dict[str, Any]:
     """Save a reusable answer for common portal questions (e.g. 'Why should we hire you?')."""
     prof = save_custom_answer(question_pattern, answer_text)
     return {"status": "saved", "pattern": question_pattern}
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def parse_resume_file(filepath: str) -> dict[str, Any]:
     """Extract raw text from a PDF or DOCX resume file."""
     text = extract_resume_text(filepath)
@@ -399,7 +399,7 @@ def parse_resume_file(filepath: str) -> dict[str, Any]:
 # ═══════════════════════════════════════════════════════════
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': True})
 def browser_open(url: str | None = None, headless: bool = False) -> str:
     """Launch stealth Playwright browser and optionally navigate to an initial URL."""
     engine = _get_browser_engine()
@@ -409,21 +409,21 @@ def browser_open(url: str | None = None, headless: bool = False) -> str:
     return f"Stealth browser launched ({title})"
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': True})
 def browser_navigate(url: str) -> str:
     """Navigate the active browser to a specific URL."""
     engine = _get_browser_engine()
     return engine.navigate(url)
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': True})
 def browser_get_page_text() -> str:
     """Extract visible text content from the current active web page."""
     engine = _get_browser_engine()
     return engine.get_page_text()
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': True})
 def browser_get_page_screenshot() -> MCPImage:
     """Capture a screenshot of the current active browser tab."""
     engine = _get_browser_engine()
@@ -431,7 +431,7 @@ def browser_get_page_screenshot() -> MCPImage:
     return MCPImage(data=b64, format="jpeg")
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': True})
 def browser_detect_form_fields() -> dict[str, Any]:
     """Detect all inputs, textareas, selects, and upload fields on the current page."""
     engine = _get_browser_engine()
@@ -458,7 +458,7 @@ def browser_detect_form_fields() -> dict[str, Any]:
     }
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': True})
 def browser_fill_detected_form() -> dict[str, Any]:
     """Intelligently map profile data and fill all detected form fields on the current page."""
     profile = load_profile()
@@ -483,7 +483,7 @@ def browser_fill_detected_form() -> dict[str, Any]:
     }
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': True})
 def browser_upload_resume(filepath: str | None = None) -> str:
     """Upload resume to the detected resume/CV file input field."""
     engine = _get_browser_engine()
@@ -503,7 +503,7 @@ def browser_upload_resume(filepath: str | None = None) -> str:
     return res
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': True, 'idempotentHint': False, 'openWorldHint': True})
 def browser_submit_form(confirm: bool = False) -> str:
     """Submit the current form. REQUIRES explicit confirmation (confirm=True)."""
     if not confirm:
@@ -525,7 +525,7 @@ def browser_submit_form(confirm: bool = False) -> str:
     return f"Successfully clicked submit button ({btn})."
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def browser_close() -> str:
     """Close the active browser instance."""
     engine = _get_browser_engine()
@@ -538,7 +538,7 @@ def browser_close() -> str:
 # ═══════════════════════════════════════════════════════════
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': False})
 def track_application(
     company: str,
     role: str,
@@ -567,7 +567,7 @@ def track_application(
     return {"status": "logged", "application_id": app_id, "company": company, "role": role}
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def update_application_progress(
     application_id: int,
     status: str,
@@ -577,7 +577,7 @@ def update_application_progress(
     return db_update_status(application_id, status, notes)
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def get_tracked_applications(
     status: str | None = None,
     company: str | None = None,
@@ -587,13 +587,13 @@ def get_tracked_applications(
     return db_list_applications(status=status, company=company, limit=limit)
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def search_tracked_applications(query: str) -> list[dict[str, Any]]:
     """Search tracked applications by keyword across company, role, and notes."""
     return db_search_applications(query)
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def get_application_analytics() -> dict[str, Any]:
     """Get aggregated statistics: total applications, interview conversion rate, offer rate, top portals."""
     return get_application_stats()
@@ -604,7 +604,7 @@ def get_application_analytics() -> dict[str, Any]:
 # ═══════════════════════════════════════════════════════════
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': False})
 def start_mock_interview(
     interview_type: str,
     company: str = "General",
@@ -624,25 +624,25 @@ def start_mock_interview(
     )
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def get_coding_hint() -> dict[str, Any]:
     """Request the next Socratic hint rung for an active coding challenge."""
     return session_engine.get_hint()
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def analyze_behavioral_star_answer(response_text: str) -> dict[str, Any]:
     """Analyze a candidate behavioral response for STAR structure, 'I vs We' ownership ratio, and pacing."""
     return session_engine.analyze_behavioral_answer(response_text)
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': False, 'destructiveHint': False, 'idempotentHint': False, 'openWorldHint': False})
 def advance_system_design_interview(candidate_response: str) -> dict[str, Any]:
     """Submit architectural proposal for current system design phase and advance to next phase."""
     return session_engine.advance_system_design(candidate_response)
 
 
-@mcp.tool()
+@mcp.tool(annotations={'readOnlyHint': True, 'destructiveHint': False, 'idempotentHint': True, 'openWorldHint': False})
 def generate_interview_scorecard(
     interview_type: str,
     score_1: int,
