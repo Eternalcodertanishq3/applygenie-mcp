@@ -7,7 +7,8 @@
 [![MCP Protocol](https://img.shields.io/badge/MCP-Standard-orange.svg)](https://modelcontextprotocol.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyPI](https://img.shields.io/pypi/v/applygenie-mcp.svg)](https://pypi.org/project/applygenie-mcp/)
-[![PyPI Downloads](https://img.shields.io/pypi/dm/applygenie-mcp.svg?color=blue&label=pypi%20downloads)](https://pypi.org/project/applygenie-mcp/)
+[![Total Downloads](https://img.shields.io/pepy/dt/applygenie-mcp?color=blue&label=total%20downloads)](https://pepy.tech/project/applygenie-mcp)
+[![Monthly Downloads](https://img.shields.io/pypi/dm/applygenie-mcp.svg?color=blue&label=downloads%2Fmonth)](https://pypi.org/project/applygenie-mcp/)
 [![MCPRush Grade A](https://img.shields.io/badge/MCPRush-Grade%20A%20%7C%2095%2F100-brightgreen.svg)](https://mcprush.com/eternalcodertanishq3/applygenie-mcp)
 [![M8ven Score](https://m8ven.ai/badge/mcp/eternalcodertanishq3-applygenie-mcp-14u38v)](https://m8ven.ai/mcp/eternalcodertanishq3-applygenie-mcp-14u38v?s=readme)
 
