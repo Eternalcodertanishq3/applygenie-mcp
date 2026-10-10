@@ -7,6 +7,8 @@
 [![MCP Protocol](https://img.shields.io/badge/MCP-Standard-orange.svg)](https://modelcontextprotocol.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PyPI](https://img.shields.io/pypi/v/applygenie-mcp.svg)](https://pypi.org/project/applygenie-mcp/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/applygenie-mcp.svg?color=blue&label=pypi%20downloads)](https://pypi.org/project/applygenie-mcp/)
+[![MCPRush Grade A](https://img.shields.io/badge/MCPRush-Grade%20A%20%7C%2095%2F100-brightgreen.svg)](https://mcprush.com/eternalcodertanishq3/applygenie-mcp)
 [![M8ven Score](https://m8ven.ai/badge/mcp/eternalcodertanishq3/applygenie-mcp)](https://m8ven.ai/mcp/eternalcodertanishq3/applygenie-mcp)
 
 <!-- mcp-name: io.github.Eternalcodertanishq3/applygenie-mcp -->
@@ -15,7 +17,7 @@
 
 ## 🌟 What is ApplyGenie?
 
-ApplyGenie bridges the gap between job discovery, form filling, application tracking, and interview readiness. It runs locally as an MCP server, empowering LLM agents (Claude Desktop, Cursor, Antigravity, VS Code, Windsurf) with **35+ specialized tools**:
+ApplyGenie bridges the gap between job discovery, form filling, application tracking, and interview readiness. It runs locally as an MCP server, empowering LLM agents (Claude Desktop, Cursor, Antigravity, VS Code, Windsurf) with **45 specialized tools**:
 
 1. 🖥️ **Desktop Control & Vision**: Fast screenshot captures (`mss`), DPI-corrected mouse navigation, human-like typing jitter (`pynput`), and native Windows window management (`pywinauto`).
 2. 📋 **Smart Candidate Profile**: Local JSON schema storing your education, work experiences, skills, work authorizations, and custom portal answer banks.
