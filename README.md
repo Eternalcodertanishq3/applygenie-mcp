@@ -9,7 +9,7 @@
 [![PyPI](https://img.shields.io/pypi/v/applygenie-mcp.svg)](https://pypi.org/project/applygenie-mcp/)
 [![PyPI Downloads](https://img.shields.io/pypi/dm/applygenie-mcp.svg?color=blue&label=pypi%20downloads)](https://pypi.org/project/applygenie-mcp/)
 [![MCPRush Grade A](https://img.shields.io/badge/MCPRush-Grade%20A%20%7C%2095%2F100-brightgreen.svg)](https://mcprush.com/eternalcodertanishq3/applygenie-mcp)
-[![M8ven Score](https://m8ven.ai/badge/mcp/eternalcodertanishq3/applygenie-mcp)](https://m8ven.ai/mcp/eternalcodertanishq3/applygenie-mcp)
+[![M8ven Score](https://m8ven.ai/badge/mcp/eternalcodertanishq3-applygenie-mcp-14u38v)](https://m8ven.ai/mcp/eternalcodertanishq3-applygenie-mcp-14u38v?s=readme)
 
 <!-- mcp-name: io.github.Eternalcodertanishq3/applygenie-mcp -->
 
